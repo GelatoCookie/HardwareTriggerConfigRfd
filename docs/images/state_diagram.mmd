@@ -1,0 +1,18 @@
+stateDiagram-v2
+    [*] --> RFID_Read
+
+    RFID_Read: Pull trigger\nperformInventory()
+    RFID_Read --> Inventory_Busy: INVENTORY_START_EVENT bRfidBusy=true
+
+    Inventory_Busy --> Inventory_Done: INVENTORY_STOP_EVENT bRfidBusy=false
+    Inventory_Done: bSwitchFromRfidToBarcode=true unsubscribe RFID trigger setTriggerEnabled(false)
+
+    Inventory_Done --> Barcode_Scan
+    Barcode_Scan: Pull trigger barcode scan
+    Barcode_Scan --> Write_Tag: barcodeData received testWriteTag()
+
+    Write_Tag --> Verify_Tag: verifyWriteTag()
+    Verify_Tag --> Restore: Pass setTriggerEnabled(true) bSwitchFromRfidToBarcode=false subscribe RFID trigger
+    Verify_Tag --> Write_Tag: Fail showSnackbar("Test Failed Retry") retry
+
+    Restore --> [*]

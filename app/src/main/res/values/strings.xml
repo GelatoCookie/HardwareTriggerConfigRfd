@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">TriggerConfig-Dev1</string>
+    <string name="test_passed">TEST PASSED</string>
+    <string name="test_failed_retry">Test Failed: Retry?</string>
+    <string name="test_failed_no_more_retries">Test Failed: No more retries.</string>
+    <string name="test_passed_read_write_verify_ok">Test Passed: read, write and verify OK</string>
+    <string name="action_settings">Settings</string>
+    <string name="trigger_rfid_rfid">Test Both Triggers as RFID</string>
+    <string name="trigger_barcode_barcode">Test Both Triggers as Barcode</string>
+    <string name="Defaults">Restore Default Settings</string>
+    <string name="bluetooth_permissions_not_granted">Bluetooth Permissions not granted</string>
+    <string name="connecting">Connecting</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="not_connected">Not connected</string>
+    <string name="default_settings_applied">Default settings applied</string>
+    <string name="failed_to_get_available_readers">Failed to get Available Readers</string>
+    <string name="failed_to_get_readers">Failed to get Readers</string>
+    <string name="no_available_readers_to_proceed">No Available Readers to proceed</string>
+    <string name="no_readers_found">No Readers Found</string>
+    <string name="failed_to_find_reader">Failed to find reader</string>
+    <string name="rfid_reader_disappeared">RFIDReaderDisappeared: %1$s</string>
+    <string name="connection_failed">Connection failed: %1$s</string>
+    <string name="scan_result_label">Scan Result : %1$s</string>
+    <string name="unique_tags">Unique Tags: %1$d</string>
+    <string name="integrated_status_passed_read_write_verify">Passed: Read Write Verify</string>
+    <string name="integrated_status_passed_switch_trigger">Passed: Switch Hardware Trigger:
+RFID and Barcode</string>
+    <string name="integrated_status_test_read_configure_write_verify_restore">Test Read RFID
+Configure Trigger for Barcode Input
+WriteRFID-ReadBackVerify
+RestoreRFID-Trigger</string>
+    <string name="integrated_status_restore_trigger_config_rfid_only">Retore Trigger Configure to RFID Only</string>
+    <string name="integrated_status_write_ok">Write OK</string>
+    <string name="integrated_status_test_failed_put_epc_retry_scan_write_verify">Test Failed: Put EPC 111122223333444455556666
+Retry Scan Barcode
+Write and Verify</string>
+    <string name="integrated_status_failed_retry_scan_write_make_sure_preprogram">Failed: Retry Barcode Scan and Write RFID
+Make sure pre-program ECP tag as
+111122223333444455556666
+Just for Trigger Switch Test!!!</string>
+    <string name="snackbar_skip_rfid_busy">SKIP!!!
+RFID Busy</string>
+    <string name="snackbar_rfid_triggers_enabled">RFID Triggers Enabled</string>
+    <string name="snackbar_barcode_triggers_enabled">Barcode Triggers Enabled</string>
+    <string name="snackbar_default_trigger_settings">Default Trigger Settings</string>
+    <string name="snackbar_pull_trigger_rfid_operation_barcode_disabled">Pull Trigger:
+RFID Operation
+
+Barcode Trigger Disabled</string>
+    <string name="snackbar_pull_trigger_read_rfid_tag_barcode_disabled">Pull Trigger:
+Read RFID Tag
+
+Barcode Trigger Disabled</string>
+    <string name="snackbar_use_barcode_data_write_epc_to_rfid">Use Barcode Data Input to Write EPC to RFID</string>
+    <string name="snackbar_done_write_verify_status">Done Write, Read back to verify RFID tag written status: 
+1. Success restore RFID Trigger
+2. Fail: Retey Bacode Scan and Write RFID</string>
+    <string name="snackbar_restore_to_rfid">Restore to RFID</string>
+    <string name="snackbar_fail_retry_barcode_scan_and_write_rfid">Fail: Pull Trigger to Retry Barcode Scan 
+and then Write RFID</string>
+    <string name="snackbar_failed_retry_barcode_scan_steps">Failed: Retry Barcode Scan
+
+1. Pull Trigger: Scan Barcode
+2. Write EPC Automatically
+3. Verify Written Data </string>
+    <string name="snackbar_color_restore_to_rfid_background">#43A047</string>
+    <string name="snackbar_color_restore_to_rfid_stroke">#2E7D32</string>
+    <string name="snackbar_color_rfid_operation_background">#2196F3</string>
+    <string name="snackbar_color_rfid_operation_stroke">#1976D2</string>
+    <string name="snackbar_color_scan_barcode_background">#222222</string>
+    <string name="snackbar_color_scan_barcode_stroke">#888888</string>
+    <string name="snackbar_color_default_background">#EE1A1A1A</string>
+    <string name="snackbar_color_default_stroke">#44FFFFFF</string>
+</resources>
