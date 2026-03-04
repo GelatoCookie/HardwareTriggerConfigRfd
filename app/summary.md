@@ -15,16 +15,3 @@ To enable a seamless transition from an RFID inventory operation to a Barcode sc
 2. **Dynamic Transition**: Upon inventory stop, the system immediately disables RFID trigger notifications and reconfigures the hardware trigger to Barcode (SLED_SCAN) mode.
 3. **Barcode Input & Targeted Write**: The next trigger pull executes a laser scan. The returned barcode data is then used to trigger a synchronous `writeWait` operation to a specific RFID tag, followed by a `readWait` verification.
 4. **Automatic Restoration**: Once the write is verified, the system restores the hardware trigger to RFID mode and resets all guard flags for normal operation.
-
-## Reliability Features
-- **Trigger Debouncing**: Guard flags ensure "echo" release events from one mode don't accidentally trigger the other.
-- **Synchronous Access**: Uses `writeWait` and `readWait` to bypass standard inventory logic for precise data writing during the test.
-- **Busy Protection**: All hardware mode switches are gated by `bRfidBusy` checks.
-
-## Update Note (2026-02-21)
-- Optimize timing for wait for reader idle by polling every `500ms` for up to `10` cycles.
-- This improves mode-switch responsiveness and avoids unnecessary fixed waiting.
-
-## Release Alignment
-- Current development release tag: `dev1`
-- See root `RELEASE_NOTES_dev1.md` for release details.

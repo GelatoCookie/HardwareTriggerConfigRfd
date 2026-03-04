@@ -1,10 +1,6 @@
 
 # Contributing
 
-**Release: dev1**
-
-See `RELEASE_NOTES_dev1.md` for the latest release details.
-
 Thank you for your interest in contributing!
 
 ## How to Contribute
@@ -20,6 +16,3 @@ Thank you for your interest in contributing!
 
 ## Code of Conduct
 - Be respectful and constructive
-
-## Update Note (2026-02-21)
-- Latest code update includes: optimize timing for wait for reader idle (`500ms` polling with bounded retries).

@@ -1,8 +1,6 @@
 # Integrated Test Flow: RFID Read → Barcode Scan → Write & Verify → Restore
 
-This document details the state machine and event-driven process for the integrated test mode on the Zebra RFD40, ensuring reliable execution and test pass criteria.
-
----
+This document details the state machine and event-driven process for the integrated test mode on the Zebra RFD40.
 
 ## Overview
 This flow enables a seamless, automated test that:
@@ -12,31 +10,17 @@ This flow enables a seamless, automated test that:
 - Verifies the write
 - Restores the trigger to RFID mode
 
----
-
 ## State Variables
 - **bRfidBusy**: True when RFID inventory is running; blocks config changes
 - **bSwitchFromRfidToBarcode**: True during barcode phase; blocks RFID trigger events
 - **Integrated Test Flag**: Set by UI to enable this test mode
 
----
-
 ## Step-by-Step Flow
 
-### 1. RFID Read (Inventory)
-- User selects integrated test mode in the UI
-- State: `bRfidBusy = false`, `bSwitchFromRfidToBarcode = false`, Test Flag = true
-- User pulls trigger → `performInventory()`
-- On `INVENTORY_START_EVENT`: `bRfidBusy = true`
-
-### 2. Transition to Barcode Mode
-- User releases trigger → `INVENTORY_STOP_EVENT`
-- On event:
-    - `bRfidBusy = false`
-    - `bSwitchFromRfidToBarcode = true`
-    - `subscribeRfidHardwareTriggerEvents(false)`
-    - `setTriggerEnabled(false)` (switches to barcode mode)
-    - UI prompts: "Pull Trigger: Scan Barcode for write tag data input"
+1. RFID Read (Inventory)
+2. Transition to Barcode Mode
+3. Barcode Scan & RFID Write/Verify
+4. Restoration to RFID Mode
 
 ### 3. Barcode Scan & RFID Write/Verify
 - User pulls trigger → hardware performs barcode scan

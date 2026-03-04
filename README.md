@@ -1,6 +1,6 @@
 # Zebra RFD40 Integrated Test Demo
 
-This project demonstrates a robust state-machine approach for integrated RFID and Barcode operations on the Zebra RFD40 reader, focusing on the `test_read_write_verify` workflow.
+This project demonstrates a robust state-machine approach for integrated RFID and Barcode operations on the Zebra RFD40 reader.
 
 ## Features
 - Seamless transition between RFID inventory and Barcode scan using a single hardware trigger
@@ -12,26 +12,12 @@ This project demonstrates a robust state-machine approach for integrated RFID an
 - **bSwitchFromRfidToBarcode**: Guards against RFID trigger events during barcode mode
 - **setTriggerEnabled(isRfidEnabled)**: Safely reconfigures the hardware trigger between RFID and Barcode (SLED_SCAN) modes
 
-## Test Flow: `test_read_write_verify`
+## Test Flow
 
 1. **RFID Read (Initial State)**
-    - User initiates test from UI
-    - Pull trigger: Starts RFID inventory (`bRfidBusy = true`)
-    - Release trigger: Stops inventory (`bRfidBusy = false`)
 2. **Transition to Barcode Input**
-    - On inventory stop, set `bSwitchFromRfidToBarcode = true`
-    - Disable RFID trigger events
-    - Call `setTriggerEnabled(false)` to switch to Barcode mode
-    - UI prompts user to scan barcode
 3. **Barcode Scan & RFID Write/Verify**
-    - Pull trigger: Barcode scan (no RFID event)
-    - Barcode data received in UI
-    - Call `testWriteTag()` to write barcode data to tag (synchronous)
-    - Call `verifyWriteTag()` to confirm write
 4. **Restoration to RFID Mode**
-    - On success, reset test flag
-    - Call `setTriggerEnabled(true)` to restore RFID mode
-    - Reset `bSwitchFromRfidToBarcode`
 
 ### State Diagram
 

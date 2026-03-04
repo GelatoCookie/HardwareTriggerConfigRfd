@@ -1,6 +1,6 @@
 # Design Flow: Read RFID -> Switch Barcode & Scan -> Write RFID -> Verify RFID -> Restore RFID
 
-This document describes the state machine and logic flow for the **Integrated Test Mode** (`test_read_write_verify`) implemented in the `RFIDHandler` class.
+This document describes the state machine and logic flow for the **Integrated Test Mode** implemented in the `RFIDHandler` class.
 
 ## Overview
 
@@ -8,8 +8,6 @@ The Integrated Test Mode demonstrates a complex transition between RFID and Barc
 - `bRfidBusy`: Tracks if an RFID operation (like inventory) is currently active.
 - `bSwitchFromRfidToBarcode`: A flag that blocks RFID trigger handling during the transition to barcode mode.
 - `MainActivity.bTest_ReadRfid_ConfigureBarcodeWriteRfidVerify_RestoreRFIDTrigger`: The UI-level flag that enables this specific test logic.
-
----
 
 ## Phase 1: RFID Read (Initial State)
 
@@ -22,8 +20,6 @@ The Integrated Test Mode demonstrates a complex transition between RFID and Barc
 4.  **Event**: `handleTriggerEvent` detects `HANDHELD_TRIGGER_PRESSED`.
 5.  **Execution**: `performInventory()` is called.
 6.  **Busy State**: `INVENTORY_START_EVENT` is received, setting `bRfidBusy = true`.
-
----
 
 ## Phase 2: Transition to Barcode Input
 
