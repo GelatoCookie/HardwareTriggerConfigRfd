@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TriggerConfig-Dev1</string>
+    <string name="app_name">TriggerConfig-v1</string>
     <string name="test_passed">TEST PASSED</string>
     <string name="test_failed_retry">Test Failed: Retry?</string>
     <string name="test_failed_no_more_retries">Test Failed: No more retries.</string>
